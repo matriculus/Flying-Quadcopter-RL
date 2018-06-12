@@ -32,7 +32,6 @@ class ReplayBuffer:
         """Return the current size of internal memory."""
         return len(self.memory)
 
-
 class Actor:
     """Actor (Policy) Model."""
 
@@ -92,7 +91,6 @@ class Actor:
             inputs=[self.model.input, action_gradients, K.learning_phase()],
             outputs=[],
             updates=updates_op)
-
         
 class Critic:
     """Critic (Value) Model."""
@@ -247,9 +245,7 @@ class DDPG():
 
         new_weights = self.tau * local_weights + (1 - self.tau) * target_weights
         target_model.set_weights(new_weights)
-        
-        
-        
+  
 class OUNoise:
     """Ornstein-Uhlenbeck process."""
 
